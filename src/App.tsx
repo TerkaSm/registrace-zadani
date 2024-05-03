@@ -1,3 +1,5 @@
+import { Registration } from "./components/Registration/Registration";
+
 export const App = () => {
   return (
     <div className="container">
@@ -6,9 +8,7 @@ export const App = () => {
         <h1>Webová aplikace</h1>
       </header>
       <main>
-        <p>
-          Startovací šablona pro webovou aplikaci v Reactu.
-        </p>
+        <Registration />
       </main>
     </div>
   );
