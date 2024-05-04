@@ -4,8 +4,7 @@ export const App = () => {
   return (
     <div className="container">
       <header>
-        <div className="logo" />
-        <h1>Webová aplikace</h1>
+        <h1>Registration</h1>
       </header>
       <main>
         <Registration />
