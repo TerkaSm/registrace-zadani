@@ -1,4 +1,6 @@
 import { useState } from "react"
+import styles from './Registration.module.css';
+import registrationImg from './img/registration.webp'
 
 interface User {
   username: string;
@@ -37,7 +39,7 @@ export const Registration = (): JSX.Element => {
     console.log(user)
 
     if (user.password !== user.passwordConfirm) {
-      alert("Hesla se neshodují, zkuste to znovu");
+      alert("Passwords do not match");
       setUser((prevUser) => ({
         ...prevUser,
         password: "",
@@ -55,48 +57,49 @@ export const Registration = (): JSX.Element => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">Email Address </label>
-      <input
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <img className={styles.img} src={registrationImg} alt="icon registration" />
+      <label className={styles.label} htmlFor="email">Email Address </label>
+      <input className={styles.input}
         type="email"
         id="email"
         name="email"
         value={user.email}
         onChange={handleEmailChange}
         required
+        placeholder="Email Address"
       />
-      <br/>
-      <label htmlFor="username">User Name </label>
-      <input
+      <label className={styles.label} htmlFor="username">User Name </label>
+      <input className={styles.input}
         type="text"
         id="username"
         name="username"
         value={user.username}
         onChange={handleChange}
         required
+        placeholder="User Name"
       />
-      <br/>
-      <label htmlFor="password">Password </label>
-      <input
+      <label className={styles.label} htmlFor="password">Password </label>
+      <input className={styles.input}
         type="password"
         id="password"
         name="password"
         value={user.password}
         onChange={handleChange}
         required
+        placeholder="Password"
       />
-      <br/>
-      <label htmlFor="passwordConfirm">Confirm Password </label>
-      <input
+      <label className={styles.label} htmlFor="passwordConfirm">Confirm Password </label>
+      <input className={styles.input}
         type="password"
         id="passwordConfirm"
         name="passwordConfirm"
         value={user.passwordConfirm}
         onChange={handleChange}
         required
+        placeholder="Confirm Password"
       />
-      <br/>
-      <button type="submit">Submit</button>
+      <button className={styles.button} type="submit">Register</button>
     </form>
   );
 };
